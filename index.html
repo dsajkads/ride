@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+
+    
+       body {
+           margin: 0;
+           overflow: hidden;
+           background-color: #87CEEB;
+       }
+
+       .sun {
+      width: 100px;
+      height: 100px;
+      background-color: #FFD700;
+      border-radius: 50%; 
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+       .road {
+           position: absolute;
+           width: 100vw;
+           height: 60px;
+           background-color: rgb(51, 44, 44); 
+           bottom: 0;
+       }
+
+       .bus {
+           position: absolute;
+           width: 300px;
+           height: 120px;
+           background-color: #d7e6ad; 
+           bottom: 60px; 
+           left: -300px;
+           animation: moveBus 8s linear infinite; 
+           border-radius: 10px;
+       }
+
+       .busWindow {
+           position: absolute;
+           width: 90px;
+           height: 70px;
+           background-color: #FFF; 
+           top: 10%;
+           right: 20px;
+           border-radius: 10px;
+       }
+
+       .busWindow1 {
+           position:initial;
+           width: 90px;
+           height: 70px;
+           background-color: #FFF; 
+           top: 10%;
+           right: 20px;
+           border-radius: 10px;
+       }
+
+       .busWheel {
+           position: absolute;
+           width: 50px;
+           height: 50px;
+           background-color: #e4d7d7; 
+           border-radius: 50%;
+           bottom: -25px; 
+           left: 60px;
+           transform: translateX(-50%);
+           animation: rotateWheel 1s linear infinite; 
+       }
+
+       .backBusWheel {
+           position: absolute;
+           width: 50px;
+           height: 50px;
+           background-color: #e4d7d7; 
+           border-radius: 50%;
+           bottom: -25px; 
+           left: 240px;
+           transform: translateX(-50%);
+           animation: rotateWheel 1s linear infinite; 
+       }
+
+       @keyframes moveCloud {
+           0%, 100% {
+               transform: translateY(0);
+           }
+           50% {
+               transform: translateY(-20px);
+           }
+           75% {
+               transform: translateY(10px);
+           }
+           25% {
+               transform: translateY(-10px);
+           }
+       }
+
+       @keyframes moveBus {
+           0% {
+               left: -300px;
+           }
+           100% {
+               left: calc(100vw - 50px);
+           }
+       }
+
+       @keyframes rotateWheel {
+           100% {
+               transform: translateX(-50%) rotate(360deg);
+           }
+       }
+   </style>
+</head>
+<body>
+   <div class="road"></div>
+   <div class="sun"></div>
+   <div class="bus">
+       <div class="busWindow"></div>
+       <div class="busWindow1"></div>
+       <div class="busWheel"></div>
+       <div class="backBusWheel"></div>
+   </div>
+</body>
